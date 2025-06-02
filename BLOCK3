@@ -1,0 +1,7 @@
+let blockedDomains = ["cv.shopee.co.th"];
+
+app.post('/update-blocked-domains', (req, res) => {
+    const newDomains = req.body.domains;
+    blockedDomains = [...blockedDomains, ...newDomains];
+    res.send("Blocked domains updated!");
+});

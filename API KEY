@@ -1,0 +1,5 @@
+import secrets
+
+# Generate a random API key
+api_key = secrets.token_hex(32)
+print(f"Your API Key: {api_key}")

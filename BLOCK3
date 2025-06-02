@@ -13,3 +13,11 @@ app.post('/update-blocked-domains', (req, res) => {
     blockedDomains = [...blockedDomains, ...newDomains];
     res.send("Blocked domains updated!");
 });
+
+let blockedDomains = ["gstatic.com"];
+
+app.post('/update-blocked-domains', (req, res) => {
+    const newDomains = req.body.domains;
+    blockedDomains = [...blockedDomains, ...newDomains];
+    res.send("Blocked domains updated!");
+});

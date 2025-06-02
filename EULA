@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End User License Agreement</title>
+    <style>
+        #eula {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            height: 300px;
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+        }
+        #accept-btn, #decline-btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>End User License Agreement (EULA)</h1>
+    <div id="eula">
+        <h2>Introduction</h2>
+        <p>This End User License Agreement ("Agreement") is a legal agreement between you ("User") and [Your Company Name] ("Company") for the use of [Software Name] ("Software").</p>
+        <h2>License Grant</h2>
+        <p>[Your Company Name] grants you a non-exclusive, non-transferable license to use the Software subject to the terms of this Agreement.</p>
+        <h2>Restrictions</h2>
+        <p>You agree not to reverse engineer, distribute, or modify the Software.</p>
+        <h2>Disclaimer of Warranties</h2>
+        <p>The Software is provided "as is" without warranty of any kind.</p>
+        <h2>Limitation of Liability</h2>
+        <p>In no event shall [Your Company Name] be liable for any damages caused by the use of the Software.</p>
+        <h2>Acceptance</h2>
+        <p>By clicking "Accept," you agree to the terms of this Agreement.</p>
+    </div>
+    <button id="accept-btn">Accept</button>
+    <button id="decline-btn">Decline</button>
+
+    <script>
+        document.getElementById("accept-btn").addEventListener("click", function() {
+            alert("You have accepted the EULA. Thank you!");
+        });
+
+        document.getElementById("decline-btn").addEventListener("click", function() {
+            alert("You have declined the EULA. You cannot proceed.");
+        });
+    </script>
+</body>
+</html>

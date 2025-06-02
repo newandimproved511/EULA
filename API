@@ -1,0 +1,51 @@
+// Import Express.js
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Middleware for parsing JSON
+app.use(express.json());
+
+// Example data
+let users = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' }
+];
+
+// GET endpoint to fetch all users
+app.get('/api/users', (req, res) => {
+  res.json(users);
+});
+
+// GET endpoint to fetch a user by ID
+app.get('/api/users/:id', (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).send('User not found');
+  res.json(user);
+});
+
+// POST endpoint to create a new user
+app.post('/api/users', (req, res) => {
+  const newUser = { id: users.length + 1, name: req.body.name };
+  users.push(newUser);
+  res.status(201).json(newUser);
+});
+
+// PUT endpoint to update a user
+app.put('/api/users/:id', (req, res) => {
+  const user = users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).send('User not found');
+  user.name = req.body.name;
+  res.json(user);
+});
+
+// DELETE endpoint to remove a user
+app.delete('/api/users/:id', (req, res) => {
+  users = users.filter(u => u.id !== parseInt(req.params.id));
+  res.status(204).send();
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`API is running at http://localhost:${port}`);
+});

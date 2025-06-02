@@ -4,7 +4,16 @@ def log_blocked_domain(domain):
 
 def is_domain_blocked(url):
     domain = url.split("//")[-1].split("/")[0]
+    if domain in blocked_domains:def log_blocked_domain(domain):
+    with open("blocked_domains.log", "a") as log_file:
+        log_file.write(f"Blocked domain: {domain}\n")
+
+def is_domain_blocked(url):
+    domain = url.split("//")[-1].split("/")[0]
     if domain in blocked_domains:
+        log_blocked_domain(domain)
+        return True
+    return False
         log_blocked_domain(domain)
         return True
     return False

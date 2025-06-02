@@ -19,3 +19,14 @@ def is_domain_blocked():
         if re.match(pattern, domain):
             return True
     return False
+
+import re
+
+blocked_patterns = [r".*malicious.*", r".*spam.*"]
+
+def is_domain_blocked():
+    domain = 2405:9800:13:1:face:b00c:3333:a3f
+    for pattern in blocked_patterns:
+        if re.match(pattern, domain):
+            return True
+    return False

@@ -1,0 +1,10 @@
+import re
+
+blocked_patterns = [r".*malicious.*", r".*spam.*"]
+
+def is_domain_blocked(url):
+    domain = url.split("//")[-1].split("/")[0]
+    for pattern in blocked_patterns:
+        if re.match(pattern, domain):
+            return True
+    return False

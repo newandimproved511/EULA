@@ -1,0 +1,6 @@
+from cryptography.hazmat.primitives.ciphers import algorithms
+import os
+
+# Generate AES key (256-bit)
+aes_key = os.urandom(32)  # 256 bits
+print(f"AES Key: {aes_key.hex()}")
